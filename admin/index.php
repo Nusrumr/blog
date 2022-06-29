@@ -1,9 +1,10 @@
 <?php
    require_once"../vendor/autoload.php";
    $login = new App\classes\login();
+   $message="";
 
 if(isset($_POST['btn'])) {
-    $login->adminlogincheck($_POST);
+   $message = $login->adminlogincheck($_POST);
 }
 ?>
 
@@ -29,6 +30,7 @@ if(isset($_POST['btn'])) {
 
                     </div>
                     <div class="card-body">
+                        <h3><?php echo $message; ?></h3>
 
                     <form action="" method="POST">
 
